@@ -25,7 +25,6 @@ function snippet(string, maxlength) {
     return string.substring(0, maxlength) + "..."
   } else {
     return string
-
   }
 }
 snippet("i am kind", 5)
@@ -33,16 +32,14 @@ snippet("i am kind", 5)
 function numProps(obj) {
   let key = Object.keys(obj).length
   return key
-
-
 }
 
-let testobj = {
-  "pg": "curry",
-  "sg": "thompson",
-  "sf": "durant"
-}
-console.log(numProps(testobj))
+// let testobj = {
+//   "pg": "curry",
+//   "sg": "thompson",
+//   "sf": "durant"
+// }
+
 
 module.exports = {
   weekday,
