@@ -1,6 +1,5 @@
 let date = new Date()
 
-
 function weekday(date) {
   if (!date instanceof Date) {
     throw new Error("not an object")
@@ -8,11 +7,9 @@ function weekday(date) {
     let day = date.getDay()
     let days = ["sun", "mon", "tues", "weds", "thu", "fri", "sat"]
 
-
     return days[day]
   }
 }
-
 
 function snippet(string, maxlength) {
   if (!(typeof string === "string")) {
@@ -34,12 +31,17 @@ function numProps(obj) {
   return key
 }
 
-// let testobj = {
-//   "pg": "curry",
-//   "sg": "thompson",
-//   "sf": "durant"
-// }
-
+function filterBetween(arr, min, max) {
+  if (!Array.isArray(arr)) {
+    throw new Error("first input field must be an array")
+  } else {
+    var number = [1, 7, 5, 8, 9, 10, 100, 200, 150]
+    var result = arr.filter(number => (number >= min && number <= max))
+    return result
+  }
+}
+var number = [1, 7, 5, 8, 9, 10, 100, 200, 150]
+console.log(filterBetween(number, 7, 100))
 
 module.exports = {
   weekday,
@@ -58,6 +60,8 @@ module.exports = {
 
 module.exports = {
   weekday,
-  snippet
+  snippet,
+  numProps,
+  filterBetween
 
 }

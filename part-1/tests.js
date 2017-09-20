@@ -2,7 +2,8 @@ var expect = require('chai').expect
 var {
   weekday,
   snippet,
-  numProps
+  numProps,
+  filterBetween
 } = require('./functions.js')
 
 describe("weekday", function () {
@@ -29,4 +30,54 @@ describe("snippet", function () {
     expect(snippet("i am quis", 10)).to.equal("i am quis")
   })
 
+})
+describe('numProps', () => {
+  it('should be 3', () => {
+    const obby = {
+      me: 2,
+      you: 3,
+      her: 4,
+    };
+    expect(numProps(obby)).to.equal(3);
+  });
+  it('should be an error', () => {
+    expect(() => {
+      numprops(3723);
+    }).to.throw(Error);
+  });
+  it('should be 4', () => {
+    const obby = {
+      me: 2,
+      you: 3,
+      her: 4,
+      him: 1,
+    };
+    expect(numProps(obby)).to.equal(4);
+  });
+  it('should be an error', () => {
+    expect(() => {
+      numprops('isfishf');
+    }).to.throw(Error);
+  });
+  it('should be an error', () => {
+    expect(() => {
+      numprops(nope());
+    }).to.throw(Error);
+  });
+  it('should be 0', () => {
+    expect(numProps({})).to.equal(0);
+  });
+});
+
+describe('filterBetween', () => {
+  it('should be 5, 8, 9, 10, 100, 150', () => {
+    var number = [5, 8, 9, 10, 100, 150, 200]
+    expect(filterBetween(number, 5, 200))
+      .to.deep.equal([5, 8, 9, 10, 100, 150, 200]);
+  });
+  it('should be error thrown', () => {
+    expect(() => {
+      filterBetween(12332432, 5, 8);
+    }).to.throw(Error);
+  });
 })
