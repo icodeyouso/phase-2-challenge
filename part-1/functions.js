@@ -49,15 +49,6 @@ module.exports = {
   numProps
 }
 
-
-
-
-
-
-
-
-
-
 module.exports = {
   weekday,
   snippet,

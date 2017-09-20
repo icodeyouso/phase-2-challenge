@@ -16,8 +16,8 @@ function searchByName(name) {
       });
     }
   });
-
-  console.dir(searchedNames, {
+  console.log("\n" + "finding " + "clients " + "with " + "name " + " " + name + " " + "...   ")
+  console.log(searchedNames, {
     depth: null,
     colors: true,
   });

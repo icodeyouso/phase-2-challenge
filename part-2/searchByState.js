@@ -21,4 +21,5 @@ function searchByState(state) {
   return searchedStates
 }
 
+console.log("\n" + "finding " + "clients " + "in " + "state " + "" + "of" + " " + stateUserInput + " " + "...   ")
 console.log(searchByState(stateUserInput))
